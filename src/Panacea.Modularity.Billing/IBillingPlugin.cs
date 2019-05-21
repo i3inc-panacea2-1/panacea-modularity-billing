@@ -1,5 +1,5 @@
 ﻿using Panacea.Models;
-using Panacea.Modularity.Callable;
+using Panacea.Modularity.UiManager;
 using System;
 using System.Collections.Generic;
 using System.Linq;
