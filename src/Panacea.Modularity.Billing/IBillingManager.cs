@@ -9,6 +9,8 @@ namespace Panacea.Modularity.Billing
 {
     public interface IBillingManager
     {
+        bool IsPluginFree(string plugnName);
+
         Task<bool> ConsumeItemAsync(string pluginName, ServerItem item);
 
         Task<bool> ConsumeQuantityAsync(string pluginName, int quantity);
