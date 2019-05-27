@@ -11,16 +11,11 @@ namespace Panacea.Modularity.Billing
     {
         bool IsPluginFree(string plugnName);
 
-        Task<bool> ConsumeItemAsync(string pluginName, ServerItem item);
+        Task<Service> GetServiceForItemAsync(string message, string pluginName, ServerItem item);
 
-        Task<bool> ConsumeQuantityAsync(string pluginName, int quantity);
+        Task<Service> GetServiceForQuantityAsync(string message, string pluginName, int quantity);
 
-        Task<bool> ConsumeItemOrRequestServiceAsync(string message, string pluginName, ServerItem item);
+        Task<Service> GetServiceAsync(string message, string pluginName);
 
-        Task<bool> ConsumeQuantityOrRequestServiceAsync(string pluginName, int quantity);
-
-        Task<Service> GetServiceForItemAsync(string pluginName, ServerItem item);
-
-        Task<Service> GetServiceForQuantityAsync(string pluginName);
     }
 }
