@@ -152,8 +152,15 @@ namespace Panacea.Modularity.Billing
         [DataMember(Name = "standAlone")]
         public bool StandAlone { get; set; }
 
+        
         [DataMember(Name = "totalPrice")]
-        public double TotalPrice { get; set; }
+        public double TotalPrice { get => _price;
+            set
+            {
+                VisiblePrice = value;
+                OnPropertyChanged();
+            }
+        }
 
         [DataMember(Name = "currency")]
         public string Currency { get; set; }
@@ -184,6 +191,7 @@ namespace Panacea.Modularity.Billing
                 _price = value;
                 OnPropertyChanged("VisiblePrice");
                 OnPropertyChanged("VisiblePriceDecimalPart");
+                OnPropertyChanged("VisiblePricePart");
             }
         }
 
