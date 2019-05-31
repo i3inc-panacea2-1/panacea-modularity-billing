@@ -23,5 +23,7 @@ namespace Panacea.Modularity.Billing
 
         Task<List<Ledger>> GetUserPurchaseHistoryAsync();
 
+        void NavigateToBuyServiceWizard();
+
     }
 }
