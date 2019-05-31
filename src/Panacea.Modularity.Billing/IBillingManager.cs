@@ -19,5 +19,9 @@ namespace Panacea.Modularity.Billing
 
         Task<Service> GetServiceAsync(string message, string pluginName);
 
+        Task<List<Service>> GetActiveUserServicesAsync();
+
+        Task<List<Ledger>> GetUserPurchaseHistoryAsync();
+
     }
 }
