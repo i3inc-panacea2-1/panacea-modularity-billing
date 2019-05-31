@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="IBillingManager.cs" />
     <Compile Include="IBillingPlugin.cs" />
+    <Compile Include="IBillingSettings.cs" />
     <Compile Include="Ledger.cs" />
     <Compile Include="Package.cs" />
     <Compile Include="PanaceaServicesExtensions.cs" />

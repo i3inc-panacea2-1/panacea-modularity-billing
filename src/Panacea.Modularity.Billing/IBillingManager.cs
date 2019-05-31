@@ -9,6 +9,8 @@ namespace Panacea.Modularity.Billing
 {
     public interface IBillingManager
     {
+        Task<IBillingSettings> GetSettingsAsync();
+
         bool IsPluginFree(string plugnName);
 
         Task<Service> GetServiceForItemAsync(string message, string pluginName, ServerItem item);
