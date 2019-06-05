@@ -21,6 +21,8 @@ namespace Panacea.Modularity.Billing
 
         Task<List<Service>> GetActiveUserServicesAsync();
 
+        List<Service> GetActiveUserServicesSilently();
+
         Task<List<Ledger>> GetUserPurchaseHistoryAsync();
 
         void NavigateToBuyServiceWizard();
