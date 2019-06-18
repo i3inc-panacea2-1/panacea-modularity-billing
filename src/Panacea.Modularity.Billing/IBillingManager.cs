@@ -13,18 +13,77 @@ namespace Panacea.Modularity.Billing
 
         bool IsPluginFree(string plugnName);
 
-        Task<Service> GetServiceForItemAsync(string message, string pluginName, ServerItem item);
+        /// <summary>
+        /// Returns a service for a plugin for a specific item. Will ask the user to buy service if no active service is found.
+        /// </summary>
+        /// <param name="message">The message to display.</param>
+        /// <param name="pluginName">The name of the plugin.</param>
+        /// <param name="item">The item to be checked.</param>
+        /// <returns>The service that matches or null</returns>
+        Task<Service> GetOrRequestServiceForItemAsync(string message, string pluginName, ServerItem item);
 
-        Task<Service> GetServiceForQuantityAsync(string message, string pluginName, int quantity);
+        /// <summary>
+        /// Returns a service for a plugin for a specific item.
+        /// </summary>
+        /// <param name="pluginName">The name of the plugin.</param>
+        /// <param name="item">The item to be checked.</param>
+        /// <returns>The service that matches or null</returns>
+        Task<Service> GetServiceForItemAsync(string pluginName, ServerItem item);
 
-        Task<Service> GetServiceAsync(string message, string pluginName);
 
+        /// <summary>
+        /// Returns a service with remaining quantity or asks users to buy service.
+        /// </summary>
+        /// <param name="message">The message to show.</param>
+        /// <param name="pluginName">The name of the plugin.</param>
+        /// <returns>The service or null</returns>
+        Task<Service> GetOrRequestServiceForQuantityAsync(string message, string pluginName);
+
+        /// <summary>
+        /// Returns a service with remaining quantity.
+        /// </summary>
+        /// <param name="message">The message to show.</param>
+        /// <param name="pluginName">The name of the plugin.</param>
+        /// <returns>The service or null</returns>
+        Task<Service> GetServiceForQuantityAsync(string pluginName);
+
+        /// <summary>
+        /// Returns any active service for a plugin name. Will ask users to buy service if none exists.
+        /// </summary>
+        /// <param name="message">The message to display</param>
+        /// <param name="pluginName">The name of the plugin</param>
+        /// <returns>The service or null</returns>
+        Task<Service> GetOrRequestServiceAsync(string message, string pluginName);
+
+        /// <summary>
+        /// Returns any active service for a plugin name. Will ask users to buy service if none exists.
+        /// </summary>
+        /// <param name="message">The message to display</param>
+        /// <param name="pluginName">The name of the plugin</param>
+        /// <returns>The service or null</returns>
+        Task<Service> GetServiceAsync(string pluginName);
+
+        /// <summary>
+        /// Refreshes current user's services and returns the active services
+        /// </summary>
+        /// <returns></returns>
         Task<List<Service>> GetActiveUserServicesAsync();
 
-        List<Service> GetActiveUserServicesSilently();
+        /// <summary>
+        /// Returns active services without refreshing
+        /// </summary>
+        /// <returns></returns>
+        List<Service> GetActiveUserServices();
 
+        /// <summary>
+        /// Returns the purchase history.
+        /// </summary>
+        /// <returns></returns>
         Task<List<Ledger>> GetUserPurchaseHistoryAsync();
 
+        /// <summary>
+        /// Navigates to buy services wizard.
+        /// </summary>
         void NavigateToBuyServiceWizard();
 
     }
