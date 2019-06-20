@@ -102,5 +102,13 @@ namespace Panacea.Modularity.Billing
         /// <returns></returns>
         Task<bool> ConsumeItemAsync(string pluginName, ServerItem item);
 
+        /// <summary>
+        /// Consumes an item.
+        /// </summary>
+        /// <param name="pluginName">plugin name</param>
+        /// <param name="item">The item to consume</param>
+        /// <returns></returns>
+        Task<bool> RequestServiceAndConsumeItemAsync(string text, string pluginName, ServerItem item);
+
     }
 }
