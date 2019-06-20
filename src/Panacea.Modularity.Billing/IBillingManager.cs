@@ -86,5 +86,21 @@ namespace Panacea.Modularity.Billing
         /// </summary>
         void NavigateToBuyServiceWizard();
 
+        /// <summary>
+        /// Consumes quantity.
+        /// </summary>
+        /// <param name="pluginName">plugin name</param>
+        /// <param name="quantity">quantity</param>
+        /// <returns>true for success</returns>
+        Task<bool> ConsumeQuantityAsync(string pluginName, int quantity);
+
+        /// <summary>
+        /// Consumes an item.
+        /// </summary>
+        /// <param name="pluginName">plugin name</param>
+        /// <param name="item">The item to consume</param>
+        /// <returns></returns>
+        Task<bool> ConsumeItemAsync(string pluginName, ServerItem item);
+
     }
 }
