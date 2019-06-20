@@ -14,6 +14,8 @@ namespace Panacea.Modularity.Billing
 
         void Monitor(Service service, ServerItem item);
 
+        void Monitor(Service service);
+
         void StopMonitor();
 
     }
