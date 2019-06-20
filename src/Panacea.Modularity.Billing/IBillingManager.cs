@@ -110,5 +110,7 @@ namespace Panacea.Modularity.Billing
         /// <returns></returns>
         Task<bool> RequestServiceAndConsumeItemAsync(string text, string pluginName, ServerItem item);
 
+        IServiceMonitor CreateServiceMonitor();
+
     }
 }
