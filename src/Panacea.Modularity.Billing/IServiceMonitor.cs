@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Panacea.Modularity.Billing
 {
-    public interface IServiceMonitor
+    public interface IServiceMonitor : IDisposable
     {
         event EventHandler<Service> ServiceExpired;
         Service CurrentService { get; }
