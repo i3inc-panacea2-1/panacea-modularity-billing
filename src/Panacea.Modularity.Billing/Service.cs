@@ -225,6 +225,9 @@ namespace Panacea.Modularity.Billing
             }
         }
         public Action Action { get; set; }
+
+        [DataMember(Name = "serviceType")]
+        public string ServiceType { get; set; }
     }
 
     [DataContract]
